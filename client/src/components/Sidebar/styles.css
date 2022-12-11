@@ -1,0 +1,16 @@
+.sidebar-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.sidebar-menu {
+    color: white;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: white;
+}
