@@ -7,7 +7,7 @@ import {
 } from './pages'
 import {
   Sidebar,
-  Char
+  Loop
 } from './components'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Sidebar
         children={
           <Routes>
-            <Route index element={<Char/>}/>
+            <Route index element={<Loop/>}/>
             <Route path="/*" element={<Home/>}/>
           </Routes>
         }

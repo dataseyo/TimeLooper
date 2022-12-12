@@ -15,7 +15,13 @@ import { FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 
 import './styles.css'
+import { 
+    NavLoop
+} from '..';
 import icons from '../../assets/icons.png'
+import {
+    useAppSelector
+} from '../../state/hooks'
 
 const drawerWidth = 240;
 
@@ -43,6 +49,8 @@ const Sidebar = ({
     children
 }: Props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+    const loop = useAppSelector(state => state.loop)
+
   // replace test data with redux state
     const [testData, setTestData] = useState<TestData[]>(
         [{
@@ -165,7 +173,7 @@ const Sidebar = ({
           </ListItem>
         ))} */}
         {
-            ["Char", "Shop"].map((text, index) => {
+            ["Loop", "Char", "Shop"].map((text, index) => {
                 return (
                     <Link to={`${text.toLowerCase()}`} className="sidebar-link" key={index}>
                         <ListItem disablePadding>
@@ -258,16 +266,26 @@ const Sidebar = ({
         position="fixed"
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: "#363537" }}
       >
-        <Toolbar>
+        <Toolbar
+            sx={{
+                display: 'flex'
+            }}
+        >
             <Box sx={{ mr: 2, display: { sm: 'none' } }} className="sidebar-menu-container">
                 <FaBars 
                     className="sidebar-menu" 
                     onClick={() => handleDrawerToggle()}
+                    style={{
+                        cursor: "pointer"
+                    }}
                 />
             </Box>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" component="div" sx={{userSelect: "none"}} >
             TimeLooper
           </Typography>
+          <NavLoop
+            {...loop}
+          />
         </Toolbar>
       </AppBar>
       <Box
@@ -312,7 +330,8 @@ const Sidebar = ({
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             display: 'flex',
             height: '100vh',
-            backgroundColor: "rgba(54, 53, 55, .5)"         
+            backgroundColor: "rgba(54, 53, 55, .5)",
+            justifyContent: 'center',
         }}
 
       >

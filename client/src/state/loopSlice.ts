@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+type Event = {
+
+}
+
 type LoopType = {
     days: number,
     currentDay: number,
@@ -8,15 +12,20 @@ type LoopType = {
 
 const initialState = {
     days: 30,
-    currentDay: 1,
-    turns: 4
+    currentDay: 27,
+    turns: 4,
+    currentTurn: 1
 }
 
-const charSlice = createSlice({
+const loopSlice = createSlice({
     name: "char",
     initialState,
     reducers: {
-        mutate: (state, action) => {
+        iterateLoop: (state, action) => {
+
+        },
+
+        iterateTurn: (state, action) => {
 
         }
     }
@@ -24,8 +33,9 @@ const charSlice = createSlice({
 
 // export actions
 export const {
-    mutate
-} = charSlice.actions
+    iterateLoop,
+    iterateTurn
+} = loopSlice.actions
 
 // export reducer
-export default charSlice.reducer
+export default loopSlice.reducer

@@ -1,0 +1,26 @@
+.loop__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.loop-tracker {
+
+}
+
+.loop-circle {
+    width: 150px;
+    height: 150px;
+    background: #fefcff;
+    border-radius: 50%;
+    border: 1px solid #cdcbd0;
+}
+
+.loop-fill {
+
+}
+
+.loop-event {
+
+}

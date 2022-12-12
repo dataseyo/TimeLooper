@@ -1,0 +1,54 @@
+.nav-loop__container {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+@media (max-width: 460px) {
+    .nav-loop__container {
+        display: none;
+    }
+}
+
+.nav-loop-days__container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    align-items: center;
+    justify-self: flex-end;
+
+}
+
+.nav-loop-days-label {
+    user-select: none;
+}
+
+.nav-loop-days {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+}
+
+.nav-loop-days-icon {
+    color: white;
+}
+
+.nav-loop-turns__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-loop-turns-label {
+    user-select: none;
+}
+
+.nav-loop-turns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+}
