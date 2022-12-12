@@ -20,7 +20,7 @@ const Loop = ({
     const text = `Day ${currentDay} / ${days}`
   return (
     <div className="loop__container">
-        <h2>Loop</h2>
+        <h2 className="loop-title">Loop</h2>
         <div className="loop-tracker">
             <CircleSVG percentage={percentage} colour="blue" text={text}/>
         </div>

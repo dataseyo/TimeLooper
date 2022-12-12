@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Outlet } from 'react-router-dom' 
 
+import './styles.css'
 import {
     Detail,
     Char,
@@ -16,7 +17,7 @@ type Props = {}
 const Home = (props: Props) => {
     const loop = useAppSelector(state => state.loop)
   return (
-    <div>
+    <div className="page">
         <Routes>
             {/* loop, char, and shop routes */}
             <Route path="loop" element={<Loop {...loop}/>} />

@@ -1,8 +1,12 @@
 .loop__container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
+}
+
+.loop-title {
+    align-self: flex-start;
 }
 
 .loop-tracker {

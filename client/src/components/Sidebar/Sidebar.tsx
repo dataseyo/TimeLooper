@@ -333,7 +333,6 @@ const Sidebar = ({
             backgroundColor: "rgba(54, 53, 55, .5)",
             justifyContent: 'center',
         }}
-
       >
           {children}
       </Box>
