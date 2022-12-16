@@ -1,0 +1,21 @@
+.char__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.char-menus {
+    display: flex;
+    flex-direction: row;
+}
+
+.char-title {
+    align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+    .char-menus {
+        flex-direction: column;
+    }
+}

@@ -1,19 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-type Event = {
+type EventChoices = {
 
+}
+
+type Event = {
+    name: string,
+    id: number,
+    details: string,
+    choices: EventChoices[]
 }
 
 type LoopType = {
     days: number,
     currentDay: number,
-    turns: number
+    turns: number,
+    currentTurn: number
 }
 
-const initialState = {
+const initialState: LoopType = {
     days: 30,
-    currentDay: 27,
-    turns: 4,
+    currentDay: 1,
+    turns: 8,
     currentTurn: 1
 }
 

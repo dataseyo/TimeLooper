@@ -48,115 +48,16 @@ const Sidebar = ({
     window,
     children
 }: Props) => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+    // mobile menu state
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    // redux store state
     const loop = useAppSelector(state => state.loop)
+    const skills = useAppSelector(state => state.char.skills)
 
-  // replace test data with redux state
-    const [testData, setTestData] = useState<TestData[]>(
-        [{
-            id: 1,
-            name: "Strength",
-            asset: "-128px -32px",
-            level: 1,
-            tasks: [
-                {
-                    id: 1,
-                    name: "task 1",
-                    xp: 10
-                },
-    
-                {
-                    id: 2,
-                    name: "task 2",
-                    xp: 20
-                }
-            ]
-        },
-    
-        {
-            id: 2,
-            name: "Arcane",
-            level: 1,
-            asset: "-128px -576px",
-            tasks: [
-                {
-                    id: 1,
-                    name: "task 1",
-                    xp: 10
-                },
-    
-                {
-                    id: 2,
-                    name: "task 2",
-                    xp: 20
-                }
-            ]
-        },
-    
-        {
-            id: 3,
-            name: "Mind",
-            level: 1,
-            asset: "-448px -96px",
-            tasks: [
-                {
-                    id: 1,
-                    name: "task 1",
-                    xp: 10
-                },
-    
-                {
-                    id: 2,
-                    name: "task 2",
-                    xp: 20
-                }
-            ]
-        },
-    
-        {
-            id: 4,
-            name: "Tinkering",
-            level: 9,
-            asset: "-128px -128px",
-            tasks: [
-                {
-                    id: 1,
-                    name: "task 1",
-                    xp: 10
-                },
-    
-                {
-                    id: 2,
-                    name: "task 2",
-                    xp: 20
-                }
-            ]
-        },
-    
-        {
-            id: 5,
-            name: "Exploring",
-            level: 22,
-            asset: "-382px -416px",
-            tasks: [
-                {
-                    id: 1,
-                    name: "task 1",
-                    xp: 10
-                },
-    
-                {
-                    id: 2,
-                    name: "task 2",
-                    xp: 20
-                }
-            ]
-        }]
-    )
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
   const drawer = (
     <div>
@@ -206,7 +107,7 @@ const Sidebar = ({
           </ListItem>
         ))} */}
         {
-            testData.map((data) => {
+            skills.map((data) => {
                 return (
                     <Link 
                         to={`${data.id}`} 
@@ -264,7 +165,7 @@ const Sidebar = ({
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: "#363537" }}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: "rgba(54, 53, 55)" }}
       >
         <Toolbar
             sx={{
@@ -280,8 +181,11 @@ const Sidebar = ({
                     }}
                 />
             </Box>
-          <Typography variant="h6" component="div" sx={{userSelect: "none"}} >
-            TimeLooper
+          <Typography variant="h4" component="div" sx={{userSelect: "none", fontFamily: "fantasy", fontWeight: "bold"}} >
+            Time
+            <span style={{color: "rgba(0, 117, 32)"}}>
+            Looper
+            </span>
           </Typography>
           <NavLoop
             {...loop}
@@ -305,7 +209,7 @@ const Sidebar = ({
           onClick={() => handleDrawerToggle()} // close sidebar when clicking sidebar button
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: "#363537"  },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: "rgba(54, 53, 55)"  },
           }}
         >
           {drawer}
@@ -314,7 +218,7 @@ const Sidebar = ({
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: "#363537"  },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: "rgba(54, 53, 55)"  },
           }}
           open
         >
@@ -330,7 +234,7 @@ const Sidebar = ({
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             display: 'flex',
             height: '100vh',
-            backgroundColor: "rgba(54, 53, 55, .5)",
+            backgroundColor: "rgba(232, 241, 242)",
             justifyContent: 'center',
         }}
       >

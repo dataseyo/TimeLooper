@@ -1,0 +1,13 @@
+.detail__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detail__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 8px;
+}

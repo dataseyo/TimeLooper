@@ -5,6 +5,9 @@
 import React from 'react'
 
 import './styles.css'
+import {
+    useAppSelector
+} from '../../../state/hooks'
 import CircleSVG from './Circle/Circle'
 
 type Props = {
@@ -12,10 +15,10 @@ type Props = {
     currentDay: number
 }
 
-const Loop = ({
-    days,
-    currentDay
-}: Props) => {
+const Loop = () => {
+    const loop = useAppSelector(state => state.loop)
+    const { currentDay, days } = loop
+
     const percentage: number = currentDay / days * 100
     const text = `Day ${currentDay} / ${days}`
   return (
@@ -23,6 +26,7 @@ const Loop = ({
         <h2 className="loop-title">Loop</h2>
         <div className="loop-tracker">
             <CircleSVG percentage={percentage} colour="blue" text={text}/>
+            {/* add turn tracker */}
         </div>
 
         <div className="loop-event">

@@ -15,12 +15,11 @@ import {
 type Props = {}
 
 const Home = (props: Props) => {
-    const loop = useAppSelector(state => state.loop)
   return (
     <div className="page">
         <Routes>
             {/* loop, char, and shop routes */}
-            <Route path="loop" element={<Loop {...loop}/>} />
+            <Route path="loop" element={<Loop/>} />
             <Route path="char" element={<Char/>} />
             <Route path="shop" element={<Shop/>} />
 
